@@ -1,6 +1,7 @@
 package perfect.android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import perfect.android.feature.new6.RuntimePermissionActivity;
 import perfect.android.material.FloatingActionButtonActivity;
 
 import android.content.Intent;
@@ -14,7 +15,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] names = new String[]{"MaterialDesign之FloatingActionButton"};
+    private String[] names = new String[]{
+            "MaterialDesign之FloatingActionButton",
+            "Android6.0之运行时权限"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     switch (position) {
                         case 0:
                             intent = new Intent(MainActivity.this, FloatingActionButtonActivity.class);
+                            break;
+                        case 1:
+                            intent = new Intent(MainActivity.this, RuntimePermissionActivity.class);
                             break;
                     }
                     startActivity(intent);
