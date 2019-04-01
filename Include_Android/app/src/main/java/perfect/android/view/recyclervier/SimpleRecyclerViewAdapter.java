@@ -32,7 +32,7 @@ class SimpleRecyclerViewAdapter extends RecyclerView.Adapter<SimpleRecyclerViewA
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         New news = mNewList.get(position);
-        holder.tvTitle.setText(news.getTime());
+        holder.tvTitle.setText(news.getTitle());
         holder.tvContent.setText(news.getContent());
         holder.tvFrom.setText(news.getFrom());
         holder.tvTime.setText(news.getTime());

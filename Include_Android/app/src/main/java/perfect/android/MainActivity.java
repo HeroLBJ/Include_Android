@@ -3,7 +3,9 @@ package perfect.android;
 import androidx.appcompat.app.AppCompatActivity;
 import perfect.android.feature.new6.RuntimePermissionActivity;
 import perfect.android.material.FloatingActionButtonActivity;
+import perfect.android.material.tablayout.TabLayoutSimpleActivity;
 import perfect.android.ndk.JNIClass;
+import perfect.android.view.recyclervier.RecyclerViewActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] names = new String[]{
             "MaterialDesign之FloatingActionButton",
-            "Android6.0之运行时权限"};
+            "Android6.0之运行时权限",
+            "RecyclerView简单运用",
+            "MaterialDesign之TabLayout"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 1:
                             intent = new Intent(MainActivity.this, RuntimePermissionActivity.class);
+                            break;
+                        case 2:
+                            intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                            break;
+                        case 3:
+                            intent = new Intent(MainActivity.this, TabLayoutSimpleActivity.class);
                             break;
                     }
                     startActivity(intent);
