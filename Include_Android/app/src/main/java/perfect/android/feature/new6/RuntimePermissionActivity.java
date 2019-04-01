@@ -31,7 +31,6 @@ public class RuntimePermissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_runtime_permission);
     }
 
-
     public void onOpenCall(View view) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // 如果没有权限则申请权限

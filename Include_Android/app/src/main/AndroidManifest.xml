@@ -28,6 +28,7 @@
         <activity android:name=".material.FloatingActionButtonActivity" />
         <!-- 运行时权限获取 -->
         <activity android:name=".feature.new6.RuntimePermissionActivity" />
+        <activity android:name=".view.recyclervier.RecyclerViewActivity" />
     </application>
 
 </manifest>
