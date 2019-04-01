@@ -23,8 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- FloatingActionButton控件使用 -->
         <activity android:name=".material.FloatingActionButtonActivity" />
+        <!-- 运行时权限获取 -->
         <activity android:name=".feature.new6.RuntimePermissionActivity" />
+        <activity android:name=".view.recyclervier.RecyclerViewActivity" />
+        <activity android:name=".material.tablayout.TabLayoutSimpleActivity" />
     </application>
 
 </manifest>
