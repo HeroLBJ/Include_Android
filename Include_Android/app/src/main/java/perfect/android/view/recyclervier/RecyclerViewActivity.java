@@ -2,6 +2,9 @@ package perfect.android.view.recyclervier;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
+
 
         mRecyclerView = findViewById(R.id.recyclerView);
         // 设置布局管理器
