@@ -3,9 +3,11 @@ package perfect.android;
 import androidx.appcompat.app.AppCompatActivity;
 import perfect.android.feature.new6.RuntimePermissionActivity;
 import perfect.android.material.FloatingActionButtonActivity;
+import perfect.android.ndk.JNIClass;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListView mListView = findViewById(R.id.listView);
         mListView.setAdapter(new MyAdapter());
+
+        JNIClass jniClass = new JNIClass();
+        int result = jniClass.add(10,20);
+        Log.e("tag","result:"+result);
     }
 
     class MyAdapter extends BaseAdapter {

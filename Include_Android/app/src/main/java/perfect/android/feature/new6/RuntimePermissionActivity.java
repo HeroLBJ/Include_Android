@@ -31,16 +31,6 @@ public class RuntimePermissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_runtime_permission);
     }
 
-
-    public void onOpenCall(View view) {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // 如果没有权限则申请权限
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 100);
-        } else {
-            call();
-        }
-    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -57,10 +47,26 @@ public class RuntimePermissionActivity extends AppCompatActivity {
     }
 
     private void call() {
-        if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            // 如果没有权限则申请权限
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 100);
             return;
         }
-        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 17682)));
+        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 111111)));
     }
 
+    public void onGoogleApi(View view) {
+    }
+
+    public void onSelf(View view) {
+
+    }
+
+    public void onEasy(View view) {
+
+    }
+
+    public void onRxPermission(View view) {
+
+    }
 }

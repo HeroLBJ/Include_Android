@@ -7,7 +7,22 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onOpenCall"
-        android:text="打电话" />
+        android:onClick="onGoogleApi"
+        android:text="@string/permission_google_api" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSelf"
+        android:text="@string/permission_self" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onEasy"
+        android:text="@string/permission_easy_permissions" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onRxPermission"
+        android:text="@string/permission_rx_permissions" />
 
 </LinearLayout>
