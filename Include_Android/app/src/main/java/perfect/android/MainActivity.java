@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     class MyAdapter extends BaseAdapter {
 
-
         private LayoutInflater mInflater;
 
         public MyAdapter() {
