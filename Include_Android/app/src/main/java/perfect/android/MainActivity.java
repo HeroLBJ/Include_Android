@@ -5,7 +5,9 @@ import perfect.android.feature.new6.RuntimePermissionActivity;
 import perfect.android.material.FloatingActionButtonActivity;
 import perfect.android.material.tablayout.TabLayoutSimpleActivity;
 import perfect.android.ndk.JNIClass;
-import perfect.android.view.recyclervier.RecyclerViewActivity;
+import perfect.android.tool.image.LookImageActivity;
+import perfect.android.view.recyclervier.more.MoreRecyclerViewActivity;
+import perfect.android.view.recyclervier.simple.RecyclerViewActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
             "MaterialDesign之FloatingActionButton",
             "Android6.0之运行时权限",
             "RecyclerView简单运用",
-            "MaterialDesign之TabLayout"};
+            "MaterialDesign之TabLayout",
+            "RecyclerView多Item",
+            "九宫格选择图片"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 3:
                             intent = new Intent(MainActivity.this, TabLayoutSimpleActivity.class);
+                            break;
+                        case 4:
+                            intent = new Intent(MainActivity.this, MoreRecyclerViewActivity.class);
+                            break;
+                        case 5:
+                            intent = new Intent(MainActivity.this, LookImageActivity.class);
                             break;
                     }
                     startActivity(intent);

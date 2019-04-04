@@ -1,4 +1,4 @@
-package perfect.android.view.recyclervier;
+package perfect.android.view.recyclervier.simple;
 
 import android.content.Context;
 import android.view.LayoutInflater;

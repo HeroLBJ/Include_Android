@@ -4,4 +4,9 @@
     <string name="permission_self">自行封装代码申请权限</string>
     <string name="permission_easy_permissions">Google easy permissions库申请权限</string>
     <string name="permission_rx_permissions">RxPermissions库申请权限</string>
+
+    <string name="image">图片</string>
+    <string name="confirm">确定</string>
+    <string name="preview">预览</string>
+    <string name="select">选择</string>
 </resources>

@@ -1,17 +1,17 @@
-package perfect.android.view.recyclervier;
+package perfect.android.view.recyclervier.more;
 
-public class New {
+import java.io.Serializable;
+
+/**
+ * @author libingjun
+ * @date 2019/4/4
+ */
+public class MoreNews implements Serializable {
     private String title;
     private String content;
-    private String time;
+    private String url;
     private String from;
-
-    public New(String title, String content, String time, String from) {
-        this.title = title;
-        this.content = content;
-        this.time = time;
-        this.from = from;
-    }
+    private String time;
 
     public String getTitle() {
         return title;
@@ -29,12 +29,12 @@ public class New {
         this.content = content;
     }
 
-    public String getTime() {
-        return time;
+    public String getUrl() {
+        return url;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getFrom() {
@@ -45,13 +45,22 @@ public class New {
         this.from = from;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
-        return "New{" +
+        return "MoreNews{" +
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", time='" + time + '\'' +
+                ", url='" + url + '\'' +
                 ", from='" + from + '\'' +
+                ", time='" + time + '\'' +
                 '}';
     }
 }

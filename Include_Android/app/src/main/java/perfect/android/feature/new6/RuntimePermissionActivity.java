@@ -47,12 +47,12 @@ public class RuntimePermissionActivity extends AppCompatActivity {
     }
 
     private void call() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             // 如果没有权限则申请权限
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 100);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
             return;
         }
-        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 111111)));
+//        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 111111)));
     }
 
     public void onGoogleApi(View view) {
