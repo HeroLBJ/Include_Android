@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide;
 import java.io.File;
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import perfect.android.R;
 
@@ -44,6 +43,12 @@ public class LookImageAdapter extends RecyclerView.Adapter<LookImageAdapter.View
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final String image = mImages.get(position);
         Glide.with(mContext).load(new File(image)).into(holder.ivImage);
+        holder.ivImage.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
+            }
+        });
     }
 
     @Override
@@ -56,7 +61,7 @@ public class LookImageAdapter extends RecyclerView.Adapter<LookImageAdapter.View
         notifyDataSetChanged();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivImage;
 

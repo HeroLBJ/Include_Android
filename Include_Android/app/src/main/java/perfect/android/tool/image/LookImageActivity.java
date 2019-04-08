@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import perfect.android.R;
 import perfect.android.other.imageselector.utils.ImageSelector;
@@ -24,10 +25,11 @@ import perfect.android.other.imageselector.utils.ImageSelector;
  * @author libingjun
  * @date 2019/4/4
  */
-public class LookImageActivity extends AppCompatActivity {
+public class LookImageActivity extends AppCompatActivity implements ImageItemTouchHelper.DragListener {
 
     private RecyclerView mRecyclerView;
     private LookImageAdapter mAdapter;
+    private ArrayList<String> images;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,15 +82,28 @@ public class LookImageActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 0 && data != null) {
-            ArrayList<String> images = data.getStringArrayListExtra(ImageSelector.SELECT_RESULT);
+            images = data.getStringArrayListExtra(ImageSelector.SELECT_RESULT);
             boolean isCameraImage = data.getBooleanExtra(ImageSelector.IS_CAMERA_IMAGE, false);
 //            Log.d("ImageSelector", "是否是拍照图片：" + isCameraImage);
             for(String path : images){
                 Log.d("Path", "图片地址：" + path);
             }
             mAdapter.refresh(images);
+            ImageItemTouchHelper helper = new ImageItemTouchHelper(this,mAdapter,images);
+            helper.setDragListener(this);
+            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
+            itemTouchHelper.attachToRecyclerView(mRecyclerView);
         }
     }
 
 
+    @Override
+    public void deleteState(boolean delete) {
+        Log.d("TAG","deleteState.............................");
+    }
+
+    @Override
+    public void dragState(boolean start) {
+        Log.d("TAG","dragState.............................");
+    }
 }
